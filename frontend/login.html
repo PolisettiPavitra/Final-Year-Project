@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">Logo</div>
+            <div class="sign-up">Sign up</div>
+        </header>
+        
+        <!-- Role Switch Bar -->
+        <div class="role-switch-container">
+            <div class="role-switch">
+                <button class="role-btn active" data-role="user">User</button>
+                <button class="role-btn" data-role="staff">Staff</button>
+                <button class="role-btn" data-role="admin">Admin</button>
+                <div class="switch-indicator"></div>
+            </div>
+        </div>
+        
+        <main class="main-content">
+            <div class="login-container">
+                <h1 class="login-title" id="loginTitle">User Login</h1>
+                
+                <!-- User Login Form -->
+                <form class="login-form active" id="userForm" data-role="user">
+                    <div class="form-group">
+                        <label for="userEmail">Email</label>
+                        <input type="email" id="userEmail" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userPassword">Password</label>
+                        <input type="password" id="userPassword" name="password" required>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">Log in</button>
+                    
+                    <p class="signup-link">
+                        Don't have an account? <a href="#" class="signup-link-btn">Sign up</a>
+                    </p>
+                </form>
+                
+                <!-- Staff Login Form -->
+                <form class="login-form" id="staffForm" data-role="staff">
+                    <div class="form-group">
+                        <label for="staffId">Staff ID</label>
+                        <input type="text" id="staffId" name="staffId" required placeholder="ST-XXXX">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="staffEmail">Email</label>
+                        <input type="email" id="staffEmail" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="staffPassword">Password</label>
+                        <input type="password" id="staffPassword" name="password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <select id="department" name="department" required>
+                            <option value="">Select Department</option>
+                            <option value="hr">Human Resources</option>
+                            <option value="finance">Finance</option>
+                            <option value="it">IT Support</option>
+                            <option value="operations">Operations</option>
+                            <option value="marketing">Marketing</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">Staff Login</button>
+                    
+                    <p class="help-text">
+                        Need help? <a href="#" class="help-link">Contact IT Support</a>
+                    </p>
+                </form>
+                
+                <!-- Admin Login Form -->
+                <form class="login-form" id="adminForm" data-role="admin">
+                    <div class="form-group">
+                        <label for="adminUsername">Admin Username</label>
+                        <input type="text" id="adminUsername" name="username" required placeholder="admin">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="adminPassword">Password</label>
+                        <input type="password" id="adminPassword" name="password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="authCode">Authentication Code</label>
+                        <input type="text" id="authCode" name="authCode" required placeholder="6-digit code">
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="secureSession" name="secureSession">
+                        <label for="secureSession">Enable secure session (recommended)</label>
+                    </div>
+                    
+                    <button type="submit" class="login-btn admin-btn">Admin Login</button>
+                    
+                    <p class="warning-text">
+                        ⚠️ Admin access is logged and monitored
+                    </p>
+                </form>
+            </div>
+        </main>
+    </div>
+    
+    <script src="login.js"></script>
+</body>
+</html>
