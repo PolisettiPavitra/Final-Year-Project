@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2FA Verification</title>
+    <link rel="stylesheet" href="2fa.css">
+</head>
+<body>
+    <div class="container">
+        <main class="main-content">
+            <div class="verification-container">
+                <div class="verification-header">
+                    <div class="security-icon">
+                        🔐
+                    </div>
+                    <h1 class="verification-title">Two-Factor Authentication</h1>
+                    <p class="verification-subtitle">Enter the verification code sent to your email</p>
+                    <p class="email-display" id="emailDisplay">code sent to: user@example.com</p>
+                </div>
+                
+                <form class="verification-form" id="verificationForm">
+                    <div class="form-group">
+                        <label for="verificationCode">Verification Code</label>
+                        <div class="code-input-container">
+                            <input type="text" id="digit1" class="code-input" maxlength="1" pattern="[0-9]" required>
+                            <input type="text" id="digit2" class="code-input" maxlength="1" pattern="[0-9]" required>
+                            <input type="text" id="digit3" class="code-input" maxlength="1" pattern="[0-9]" required>
+                            <input type="text" id="digit4" class="code-input" maxlength="1" pattern="[0-9]" required>
+                            <input type="text" id="digit5" class="code-input" maxlength="1" pattern="[0-9]" required>
+                            <input type="text" id="digit6" class="code-input" maxlength="1" pattern="[0-9]" required>
+                        </div>
+                        <div class="error-message" id="codeError"></div>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="rememberDevice" name="rememberDevice">
+                        <label for="rememberDevice">Remember this device for 30 days</label>
+                    </div>
+                    
+                    <button type="submit" class="verify-btn" id="verifyBtn">Verify & Continue</button>
+                    
+                    <div class="resend-section">
+                        <p class="resend-text">Didn't receive the code?</p>
+                        <button type="button" class="resend-btn" id="resendBtn">Resend Code</button>
+                        <div class="countdown" id="countdown"></div>
+                    </div>
+                </form>
+                
+                <div class="back-link">
+                    <a href="login.html" class="back-to-login">← Back to Login</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="2fa.js"></script>
+</body>
+</html>

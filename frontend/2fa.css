@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f1e8, #e8dcc0);
+    min-height: 100vh;
+    color: #333;
+    background-image: url('https://www.shikhar-ngo.org/upload/April29-2019-7-48amhappy-faces-of-children.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.verification-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    overflow: hidden;
+}
+
+.verification-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.security-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.verification-title {
+    font-size: 26px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.verification-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.email-display {
+    font-size: 14px;
+    color: #d2691e;
+    font-weight: 500;
+    background: rgba(210, 105, 30, 0.1);
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.verification-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 12px;
+    font-weight: 500;
+    color: #555;
+    font-size: 15px;
+}
+
+.code-input-container {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.code-input {
+    width: 50px;
+    height: 60px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.code-input:focus {
+    outline: none;
+    border-color: #d2691e;
+    box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.1);
+    transform: scale(1.05);
+}
+
+.code-input.error {
+    border-color: #e74c3c;
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+.code-input.success {
+    border-color: #27ae60;
+    background-color: rgba(39, 174, 96, 0.05);
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #d2691e;
+    margin: 0;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-size: 14px;
+    cursor: pointer;
+    color: #666;
+}
+
+.verify-btn {
+    background: linear-gradient(135deg, #d2691e, #ff8c00);
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.verify-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(210, 105, 30, 0.3);
+}
+
+.verify-btn:active {
+    transform: translateY(0);
+}
+
+.verify-btn:disabled {
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.6;
+}
+
+.resend-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.resend-text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.resend-btn {
+    background: none;
+    border: none;
+    color: #d2691e;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.resend-btn:hover {
+    color: #ff8c00;
+}
+
+.resend-btn:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+    text-decoration: none;
+}
+
+.countdown {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.back-to-login {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-to-login:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 5px;
+    min-height: 18px;
+}
+
+.success-message {
+    color: #27ae60;
+    font-size: 14px;
+    text-align: center;
+    background: rgba(39, 174, 96, 0.1);
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+/* Loading animation for verify button */
+.verify-btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.verify-btn.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .verification-container {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+    
+    .verification-title {
+        font-size: 22px;
+    }
+    
+    .code-input-container {
+        gap: 8px;
+    }
+    
+    .code-input {
+        width: 45px;
+        height: 55px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .verification-container {
+        padding: 25px 15px;
+    }
+    
+    .verification-title {
+        font-size: 20px;
+    }
+    
+    .code-input-container {
+        gap: 6px;
+    }
+    
+    .code-input {
+        width: 40px;
+        height: 50px;
+        font-size: 18px;
+    }
+    
+    .verify-btn {
+        padding: 14px 18px;
+        font-size: 14px;
+    }
+}
