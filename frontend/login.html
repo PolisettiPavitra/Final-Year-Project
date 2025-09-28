@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="header">
@@ -116,12 +118,12 @@
 
                     
                     <p class="signup-link">
-                        Don't have an account? <a href="#" class="signup-link-btn">Sign up</a>
+                        Don't have an account? <a href="signup.html" class="signup-link-btn">Sign up</a>
                     </p>
                 </form>
                 
                 <!-- Staff Login Form -->
-                <form class="login-form" id="staffForm" data-role="staff">
+                <form class="login-form" id="staffForm" data-role="staff" method="POST" action="login.php">
                     <div class="form-group">
                         <label for="staffId">Staff ID</label>
                         <input type="text" id="staffId" name="staffId" required placeholder="ST-XXXX">

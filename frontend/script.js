@@ -154,11 +154,13 @@ function initDynamicCircles() {
         progressCircle.setAttribute('cy', '60');
         progressCircle.setAttribute('r', '50');
         progressCircle.setAttribute('fill', 'none');
-        progressCircle.setAttribute('stroke', '#8B4513');
+        progressCircle.setAttribute('stroke', '#1128ce');
         progressCircle.setAttribute('stroke-width', '6');
         progressCircle.setAttribute('stroke-dasharray', `${percentage * 3.14} 314`);
         progressCircle.setAttribute('stroke-dashoffset', '78.5');
         progressCircle.style.transition = 'stroke-dasharray 2s ease-in-out';
+        progressCircle.style.transform = 'rotate(-90deg)';
+        progressCircle.style.transformOrigin = '60px 60px';
         
         svg.appendChild(progressCircle);
         circle.insertBefore(svg, circle.firstChild);
@@ -302,7 +304,7 @@ function initInteractiveElements() {
     infoItems.forEach(item => {
         item.addEventListener('click', function() {
             // Add click feedback
-            this.style.backgroundColor = '#e0d8c8';
+            this.style.backgroundColor = '#c4a391';
             setTimeout(() => {
                 this.style.backgroundColor = 'transparent';
             }, 200);
@@ -327,6 +329,22 @@ function initInteractiveElements() {
             console.log('Social icon clicked:', this.className);
         });
     });
+
+    // Sponsor button interaction
+    const sponsorButton = document.getElementById('sponsor-button');
+    if (sponsorButton) {
+        sponsorButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Add some visual feedback
+            this.style.transform = 'translate(-50%, -50%) scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 150);
+            
+            // Here you would typically redirect to the sponsor page
+            console.log('Sponsor button clicked');
+        });
+    }
 }
 
 // Form Validation (for future forms)
@@ -358,9 +376,6 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
-
-// Initialize interactive elements when DOM is ready
-// document.addEventListener('DOMContentLoaded', initInteractiveElements); // Removed duplicate listener
 
 // Handle window resize events
 window.addEventListener('resize', debounce(() => {
